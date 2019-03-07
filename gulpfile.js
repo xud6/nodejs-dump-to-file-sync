@@ -30,13 +30,3 @@ gulp.task("tsbuild", gulp.series("cleanDist", tsbuildFunc));
 gulp.task("build", gulp.series("tsbuild"));
 
 gulp.task("prePublish", gulp.series("test", "build"));
-
-const docProject = ts.createProject("tsconfig.json", { removeComments: false });
-
-function docBuildFunc() {
-    return gulp.src("src/**/*.ts")
-        .pipe(docProject())
-        .pipe(gulp.dest('dist'))
-}
-
-gulp.task("docBuild", gulp.series("cleanDist", docBuildFunc))

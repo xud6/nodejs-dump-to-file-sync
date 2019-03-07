@@ -8,8 +8,7 @@
     "test": "gulp test",
     "build": "gulp build",
     "prepublishOnly": "gulp prePublish",
-    "preversion": "gulp docBuild",
-    "version": "jsdoc2md dist/index.js > readme.md && git add -A readme.md",
+    "version": "typedoc --out docs src && git add -A docs",
     "debug": "ts-node debug/index.ts"
   },
   "repository": {
@@ -32,6 +31,7 @@
     "merge2": "^1.2.3",
     "mocha": "^6.0.0",
     "ts-node": "^8.0.1",
+    "typedoc": "^0.14.2",
     "typescript": "^3.2.2"
   },
   "dependencies": {},

@@ -1,14 +1,9 @@
-<a name="dumpToFileSync"></a>
+# dump-to-file-sync
+Write messages to file insync, in situalizations like controlled crash
 
-## dumpToFileSync(message, fleName, fileExtension, timeStamp)
-write some message to file
+##
 
-**Kind**: global function  
-
-| Param | Default | Description |
-| --- | --- | --- |
-| message |  | message to write |
-| fleName | <code>dump</code> | main file name of file |
-| fileExtension | <code>log</code> | file extension of the file |
-| timeStamp | <code>true</code> | add time stamp or not |
-
+```js
+import dumpToFileSync from '@xud6/dump-to-file-sync'
+dumpToFileSync('some crash report','crash-report')
+```

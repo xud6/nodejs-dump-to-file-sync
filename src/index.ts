@@ -3,6 +3,14 @@ import path from 'path'
 import util from 'util'
 
 /**
+ * Write message to file
+ * 
+ *     import dumpToFileSync from '@xud6/dump-to-file-sync'
+ *     dumpToFileSync('message','crash-report');
+ * 
+ */
+
+/**
  * write some message to file
  * @param message message to write
  * @param fleName main file name of file
