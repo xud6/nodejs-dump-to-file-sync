@@ -1,6 +1,6 @@
 {
   "name": "@xud6/dump-to-file-sync",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "dump some thing to file log",
   "main": "dist/index.js",
   "typings": "dist/definitions/index.d.ts",
