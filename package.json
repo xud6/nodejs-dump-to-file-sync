@@ -1,0 +1,40 @@
+{
+  "name": "dump-to-file-sync",
+  "version": "1.0.0",
+  "description": "dump some thing to file log",
+  "main": "dist/index.js",
+  "typings": "dist/definitions/index.d.ts",
+  "scripts": {
+    "test": "gulp test",
+    "build": "gulp build",
+    "prepublishOnly": "gulp prePublish",
+    "preversion": "gulp docBuild",
+    "version": "jsdoc2md dist/index.js > readme.md && git add -A readme.md",
+    "debug": "ts-node debug/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xud6/nodejs-dump-to-file-sync.git"
+  },
+  "keywords": [],
+  "author": "xud6",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "del": "^4.0.0",
+    "gulp": "^4.0.0",
+    "gulp-mocha": "^6.0.0",
+    "gulp-typescript": "^5.0.0",
+    "jsdoc-to-markdown": "^4.0.0",
+    "merge2": "^1.2.3",
+    "mocha": "^6.0.0",
+    "ts-node": "^8.0.1",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {},
+  "files": [
+    "dist"
+  ]
+}
