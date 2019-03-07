@@ -1,23 +1,17 @@
-/**
- * template error
- */
-export class template_error extends Error {
-    /**
-     * 
-     * @param message error message
-     */
-    constructor(message: string) {
-        super(message);
-        this.message = message;
-        this.name = 'template error';
+import fs from 'fs'
+import path from 'path'
+import util from 'util'
+
+export function dumpToFileSync(message: any, fleName: string = 'dump', fileExtension: string = 'log', timeStamp: boolean = true) {
+    let fullFileName
+    if (timeStamp) {
+        let timeString = new Date().toISOString().replace('-', '').replace('-', '').replace(':', '').replace(':', '')
+        fullFileName = `${fleName}-${timeString}.${fileExtension}`
+    } else {
+        fullFileName = `${fleName}.${fileExtension}`
     }
+
+    fs.writeFileSync(path.join(process.cwd(), fullFileName), util.format(message), { encoding: 'utf8' })
 }
 
-/**
- * print hello message
- * @param compiler people to welcome
- */
-function hello(compiler: string) {
-    console.log(`Hello from ${compiler}`);
-}
-hello("TypeScript");
+export default dumpToFileSync
