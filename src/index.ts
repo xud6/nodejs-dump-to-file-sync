@@ -26,7 +26,7 @@ export function dumpToFileSync(message: any, fleName: string = 'dump', fileExten
         fullFileName = `${fleName}.${fileExtension}`
     }
 
-    fs.writeFileSync(path.join(process.cwd(), fullFileName), util.format(message), { encoding: 'utf8' })
+    fs.appendFileSync(path.join(process.cwd(), fullFileName), util.format(message), { encoding: 'utf8' })
 }
 
 export default dumpToFileSync
