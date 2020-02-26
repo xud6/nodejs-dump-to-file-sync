@@ -71,6 +71,12 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_index_.html#filetimestampformat" class="tsd-kind-icon">file<wbr>Time<wbr>Stamp<wbr>Format</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_index_.html#dumptofilesync" class="tsd-kind-icon">dump<wbr>ToFile<wbr>Sync</a></li>
@@ -80,18 +86,38 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
+					<a name="filetimestampformat" class="tsd-anchor"></a>
+					<h3>file<wbr>Time<wbr>Stamp<wbr>Format</h3>
+					<div class="tsd-signature tsd-kind-icon">file<wbr>Time<wbr>Stamp<wbr>Format<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"day"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"timestamp"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/xud6/nodejs-dump-to-file-sync/blob/38583c5/src/index.ts#L13">index.ts:13</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Write message to file</p>
+						</div>
+						<pre><code><span class="hljs-keyword">import</span> dumpToFileSync <span class="hljs-keyword">from</span> <span class="hljs-string">'@xud6/dump-to-file-sync'</span>
+dumpToFileSync(<span class="hljs-string">'message'</span>,<span class="hljs-string">'crash-report'</span>);</code></pre>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
 					<a name="dumptofilesync" class="tsd-anchor"></a>
 					<h3>dump<wbr>ToFile<wbr>Sync</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">dump<wbr>ToFile<wbr>Sync<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, fleName<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, fileExtension<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, timeStamp<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">dump<wbr>ToFile<wbr>Sync<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, fleName<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, messageTimeStamp<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, fileTimeStampFormat<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">fileTimeStampFormat</a>, fileExtension<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xud6/nodejs-dump-to-file-sync/blob/c865ca4/src/index.ts#L20">index.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/xud6/nodejs-dump-to-file-sync/blob/38583c5/src/index.ts#L22">index.ts:22</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -114,15 +140,15 @@
 									</div>
 								</li>
 								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> messageTimeStamp: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> fileTimeStampFormat: <a href="" class="tsd-signature-type">fileTimeStampFormat</a><span class="tsd-signature-symbol"> =&nbsp;&quot;day&quot;</span></h5>
+								</li>
+								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> fileExtension: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;log&quot;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>file extension of the file</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> timeStamp: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>add time stamp or not</p>
 									</div>
 								</li>
 							</ul>
@@ -145,6 +171,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="_index_.html#filetimestampformat" class="tsd-kind-icon">file<wbr>Time<wbr>Stamp<wbr>Format</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_index_.html#dumptofilesync" class="tsd-kind-icon">dump<wbr>ToFile<wbr>Sync</a>
 					</li>
