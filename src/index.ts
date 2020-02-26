@@ -10,6 +10,8 @@ import util from 'util'
  * 
  */
 
+export type fileTimeStampFormat = "day" | "timestamp" | false | ""
+
 /**
  * write some message to file
  * @param message message to write
@@ -17,15 +19,25 @@ import util from 'util'
  * @param fileExtension file extension of the file
  * @param timeStamp add time stamp or not
  */
-export function dumpToFileSync(message: any, fleName: string = 'dump', fileExtension: string = 'log', timeStamp: boolean = true) {
+export function dumpToFileSync(message: any, fleName: string = 'dump', messageTimeStamp: boolean = true, fileTimeStampFormat: fileTimeStampFormat = "day", fileExtension: string = 'log') {
     let fullFileName
-    if (timeStamp) {
-        let timeString = new Date().toISOString().replace('-', '').replace('-', '').replace(':', '').replace(':', '')
-        fullFileName = `${fleName}-${timeString}.${fileExtension}`
+    let date = new Date()
+    let dateISOString = date.toISOString();
+    let dateLocalString = date.toLocaleDateString(undefined, {
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false,
+        timeZoneName: "short"
+    })
+    if (fileTimeStampFormat === "day") {
+        fullFileName = `${fleName}-${dateLocalString.slice(0, 10)}.${fileExtension}`
+    } else if (fileTimeStampFormat === "timestamp") {
+        fullFileName = `${fleName}-${dateLocalString.replace('-', '').replace('-', '').replace(':', '').replace(':', '')}.${fileExtension}`
     } else {
         fullFileName = `${fleName}.${fileExtension}`
     }
-
+    if (messageTimeStamp) {
+        fs.appendFileSync(path.join(process.cwd(), fullFileName), `\n===${dateLocalString}===${dateISOString}===\n`, { encoding: 'utf8' })
+    }
     fs.appendFileSync(path.join(process.cwd(), fullFileName), util.format(message), { encoding: 'utf8' })
 }
 
